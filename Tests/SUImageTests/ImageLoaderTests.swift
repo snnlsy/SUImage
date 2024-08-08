@@ -12,7 +12,7 @@ final class ImageLoaderTests: XCTestCase {
 
     // MARK: - Private variables
 
-    private var sut: ImageLoader!
+    private var sut: SUImageLoader!
     private var mockCache: ImageCacheMock!
     private var mockFetcher: ImageFetcherMock!
     private var mockCompressor: ImageCompressorMock!
@@ -28,7 +28,7 @@ final class ImageLoaderTests: XCTestCase {
         mockCompressor = ImageCompressorMock()
         mockProcessor = ImageProcessorMock()
         mockLogger = LoggerMock()
-        sut = ImageLoader(
+        sut = SUImageLoader(
             cache: mockCache,
             fetcher: mockFetcher,
             compressor: mockCompressor,

@@ -8,7 +8,7 @@
 import XCTest
 @testable import SUImage
 
-class ImageCacheMock: ImageCaching {
+class ImageCacheMock: SUImageCaching {
     var mockImage: UIImage?
     var isRemoveAllObjectsCalled = false
 

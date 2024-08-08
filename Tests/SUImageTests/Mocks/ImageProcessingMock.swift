@@ -8,7 +8,7 @@
 import XCTest
 @testable import SUImage
 
-class ImageProcessorMock: ImageProcessing {
+class ImageProcessorMock: SUImageProcessing {
     var mockImage: UIImage?
 
     func resize(_ image: UIImage, to size: CGSize) -> UIImage {

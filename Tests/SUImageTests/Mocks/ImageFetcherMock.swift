@@ -8,10 +8,10 @@
 import XCTest
 @testable import SUImage
 
-class ImageFetcherMock: ImageFetching {
-    var mockResult: Result<Data, ImageLoadingError>!
+class ImageFetcherMock: SUImageFetching {
+    var mockResult: Result<Data, SUImageLoadingError>!
 
-    func fetchImage(from url: URL) async -> Result<Data, ImageLoadingError> {
+    func fetchImage(from url: URL) async -> Result<Data, SUImageLoadingError> {
         mockResult
     }
 }

@@ -15,8 +15,8 @@ extension UIImageView {
     }
 
     /// The image loader instance used for loading images.
-    public var imageLoader: ImageLoading? {
-        get { objc_getAssociatedObject(self, &AssociatedKeys.imageLoader) as? ImageLoading }
+    public var imageLoader: SUImageLoading? {
+        get { objc_getAssociatedObject(self, &AssociatedKeys.imageLoader) as? SUImageLoading }
         set { objc_setAssociatedObject(self, &AssociatedKeys.imageLoader, newValue, .OBJC_ASSOCIATION_RETAIN) }
     }
 

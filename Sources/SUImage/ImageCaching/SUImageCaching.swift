@@ -1,6 +1,6 @@
 //
-//  ImageCaching.swift
-//  
+//  SUImageCaching.swift
+//
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 /// A protocol for image caching functionality.
-public protocol ImageCaching: AnyObject {
+public protocol SUImageCaching: AnyObject {
     /// Caches the given image with the specified key.
     ///
     /// - Parameters:

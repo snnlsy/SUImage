@@ -1,5 +1,5 @@
 //
-//  ImageLoader.swift
+//  SUImageLoader.swift
 //  
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
@@ -8,22 +8,22 @@
 import UIKit
 
 /// A class that combines various functionalities to load images.
-public class ImageLoader: ImageLoading {
+public class SUImageLoader: SUImageLoading {
 
-    public static let shared = ImageLoader()
+    public static let shared = SUImageLoader()
 
-    private let cache: ImageCaching
-    private let fetcher: ImageFetching
-    private let compressor: ImageCompressing
-    private let processor: ImageProcessing
-    private let logger: Logging
+    private let cache: SUImageCaching
+    private let fetcher: SUImageFetching
+    private let compressor: SUImageCompressing
+    private let processor: SUImageProcessing
+    private let logger: SULogging
 
     public init(
-        cache: ImageCaching = ImageCache(),
-        fetcher: ImageFetching = ImageFetcher(),
-        compressor: ImageCompressing = ImageCompressor(),
-        processor: ImageProcessing = ImageProcessor(),
-        logger: Logging = ConsoleLogger(minimumLogLevel: .error)
+        cache: SUImageCaching = SUImageCache(),
+        fetcher: SUImageFetching = SUImageFetcher(),
+        compressor: SUImageCompressing = SUImageCompressor(),
+        processor: SUImageProcessing = SUImageProcessor(),
+        logger: SULogging = SUConsoleLogger(minimumLogLevel: .error)
     ) {
         self.cache = cache
         self.fetcher = fetcher
@@ -36,7 +36,7 @@ public class ImageLoader: ImageLoading {
     public func loadImage(
         from url: URL,
         size: CGSize? = nil
-    ) async -> Result<UIImage, ImageLoadingError> {
+    ) async -> Result<UIImage, SUImageLoadingError> {
         let cacheKey = makeCacheKey(for: url, size: size)
 
         if let cachedImage = cache.object(forKey: cacheKey) {

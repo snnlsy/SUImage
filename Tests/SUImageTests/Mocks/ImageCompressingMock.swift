@@ -8,14 +8,14 @@
 import XCTest
 @testable import SUImage
 
-class ImageCompressorMock: ImageCompressing {
-    var mockResult: Result<Data, ImageLoadingError>!
+class ImageCompressorMock: SUImageCompressing {
+    var mockResult: Result<Data, SUImageLoadingError>!
 
     func compress(_ image: UIImage, quality: CGFloat) -> Data? {
         nil
     }
 
-    func compress(_ data: Data) -> Result<Data, ImageLoadingError> {
+    func compress(_ data: Data) -> Result<Data, SUImageLoadingError> {
         mockResult
     }
 }

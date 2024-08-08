@@ -1,5 +1,5 @@
 //
-//  ImageCache.swift
+//  SUImageCache.swift
 //  
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Class for caching images using NSCache.
-public class ImageCache: ImageCaching {
+public class SUImageCache: SUImageCaching {
     private let cache: NSCache<NSString, UIImage>
 
     public init(

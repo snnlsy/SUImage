@@ -8,10 +8,10 @@
 import XCTest
 @testable import SUImage
 
-class LoggerMock: Logging {
+class LoggerMock: SULogging {
     var loggedMessages: [String] = []
 
-    func log(_ message: String, level: LogLevel) {
+    func log(_ message: String, level: SULogLevel) {
         loggedMessages.append(message)
     }
 }

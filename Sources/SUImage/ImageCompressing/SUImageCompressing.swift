@@ -1,6 +1,6 @@
 //
-//  ImageCompressing.swift
-//  
+//  SUImageCompressing.swift
+//
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 /// A protocol for image compression functionality.
-public protocol ImageCompressing {
+public protocol SUImageCompressing {
     /// Compresses the given UIImage to the specified quality.
     ///
     /// - Parameters:
@@ -20,6 +20,6 @@ public protocol ImageCompressing {
     /// Compresses the given image data.
     ///
     /// - Parameter data: The image data to be compressed.
-    /// - Returns: A Result containing compressed data or an ImageLoadingError.
-    func compress(_ data: Data) -> Result<Data, ImageLoadingError>
+    /// - Returns: A Result containing compressed data or an SUImageLoadingError.
+    func compress(_ data: Data) -> Result<Data, SUImageLoadingError>
 }

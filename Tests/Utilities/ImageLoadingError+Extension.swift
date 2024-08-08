@@ -8,8 +8,8 @@
 @testable import SUImage
 
 /// Equatable conformance to compare two ImageLoadingError instances.
-extension ImageLoadingError: Equatable {
-    public static func == (lhs: ImageLoadingError, rhs: ImageLoadingError) -> Bool {
+extension SUImageLoadingError: Equatable {
+    public static func == (lhs: SUImageLoadingError, rhs: SUImageLoadingError) -> Bool {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL),
              (.invalidData, .invalidData),

@@ -1,6 +1,6 @@
 //
-//  ImageProcessing.swift
-//  
+//  SUImageProcessing.swift
+//
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 /// A protocol that defines image resizing functionality.
-public protocol ImageProcessing {
+public protocol SUImageProcessing {
     /// Resizes the given image to the specified size.
     ///
     /// - Parameters:

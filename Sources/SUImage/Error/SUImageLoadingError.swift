@@ -1,5 +1,5 @@
 //
-//  ImageLoadingError.swift
+//  SUImageLoadingError.swift
 //
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Enumeration representing errors that can occur during image loading.
-public enum ImageLoadingError: Error, LocalizedError {
+public enum SUImageLoadingError: Error, LocalizedError {
     case invalidURL
     case invalidData
     case compressionFailed

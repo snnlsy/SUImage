@@ -1,5 +1,5 @@
 //
-//  ImageProcessor.swift
+//  SUImageProcessor.swift
 //  
 //
 //  Created by Sinan Ulusoy on 3.08.2024.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Class for processing images, such as resizing.
-public class ImageProcessor: ImageProcessing {
+public class SUImageProcessor: SUImageProcessing {
     public init() {}
 
     public func resize(
