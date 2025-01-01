@@ -9,14 +9,22 @@ import UIKit
 
 /// Extension for UIImageView to load images asynchronously.
 extension UIImageView {
+    private static var defaultImageLoader: SUImageLoading = SUImageLoader.shared
+
     private struct AssociatedKeys {
         static var imageLoader = "imageLoader"
         static var imageLoadingTask = "imageLoadingTask"
     }
+    
+    /// The default image loader instance used for all UIImageView instances.
+    public static var defaultLoader: SUImageLoading {
+        get { defaultImageLoader }
+        set { defaultImageLoader = newValue }
+    }
 
     /// The image loader instance used for loading images.
     public var imageLoader: SUImageLoading? {
-        get { objc_getAssociatedObject(self, &AssociatedKeys.imageLoader) as? SUImageLoading }
+        get { objc_getAssociatedObject(self, &AssociatedKeys.imageLoader) as? SUImageLoading ?? UIImageView.defaultLoader }
         set { objc_setAssociatedObject(self, &AssociatedKeys.imageLoader, newValue, .OBJC_ASSOCIATION_RETAIN) }
     }
 
@@ -26,15 +34,14 @@ extension UIImageView {
         set { objc_setAssociatedObject(self, &AssociatedKeys.imageLoadingTask, newValue, .OBJC_ASSOCIATION_RETAIN) }
     }
 
-      /// Sets the image directly to the UIImageView on the main thread.
-      ///
-      /// - Parameter image: The UIImage to set.
-      @MainActor
-      public func setImage(image: UIImage) {
-          cancelImageLoading()
-          self.image = image
-      }
-
+    /// Sets the image directly to the UIImageView on the main thread.
+    ///
+    /// - Parameter image: The UIImage to set.
+    @MainActor
+    public func setImage(image: UIImage) {
+        cancelImageLoading()
+        self.image = image
+    }
 
     /// Loads an image from a URL and sets it to the UIImageView.
     ///
